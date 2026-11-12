@@ -1,1 +1,0 @@
-# survei-ai-papua
