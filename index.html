@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#06060c">
+<title>Survei Singkat: Teknologi & AI di Jayapura/Papua</title>
+<style>
+:root{--black:#06060c;--navy:#0a1330;--navy2:#101c44;--card:#0e1534;--blue:#3d7bff;--sky:#6fb4ff;--purple:#8a4fe8;--lilac:#b58cff;--ink:#e9edff;--mut:#9aa6cf;--line:#26335f;--err:#ff7a8a;--tri:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24'%3E%3Cpolygon points='0,24 12,0 24,24' fill='%237b3fe4'/%3E%3Cpolygon points='24,24 36,0 48,24' fill='%232f6bff'/%3E%3C/svg%3E");--zig:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='12'%3E%3Cpath d='M0 10 L9 2 L18 10 L27 2 L36 10' fill='none' stroke='%23a46bff' stroke-width='2'/%3E%3C/svg%3E");--spi:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Cpath d='M36 36 m0 -3 a3 3 0 1 1 -3 3 a6 6 0 1 1 6 6 a10 10 0 1 1 -10 -10 a14 14 0 1 1 14 14 a18 18 0 1 1 -18 -18' fill='none' stroke='%23a46bff' stroke-opacity='.16' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E")}
+*{box-sizing:border-box}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+ background:var(--spi),radial-gradient(1100px 600px at 85% -10%,#2a1a63 0,transparent 60%),radial-gradient(900px 600px at -10% 20%,#0f2a6e 0,transparent 55%),linear-gradient(180deg,var(--navy) 0,var(--black) 100%);background-attachment:fixed}
+.hero{position:relative;padding:36px 18px 0;overflow:hidden;background:linear-gradient(135deg,#140a33,#0a1a4d 60%,#06060c)}
+.hero .in{max-width:1060px;margin:0 auto;display:flex;align-items:center;gap:24px;padding-bottom:30px}
+.hero h1{font:700 clamp(1.5rem,4.2vw,2.5rem)/1.2 Georgia,"Times New Roman",serif;margin:0 0 10px;letter-spacing:.2px}
+.hero p{margin:0;color:var(--mut);max-width:52ch}
+.emb{flex:none;width:clamp(72px,16vw,150px)}
+.emb svg{width:100%;height:auto;filter:drop-shadow(0 0 14px #8a4fe866);animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.band{height:24px;background:var(--tri) repeat-x;opacity:.9}
+.bar{position:sticky;top:0;z-index:20;background:rgba(6,6,12,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px 16px}
+.bar>div{max-width:1060px;margin:0 auto;display:flex;align-items:center;gap:12px;font-size:14px;color:var(--mut)}
+#pct{min-width:40px;font-weight:700;color:var(--ink)}
+.track{flex:1;height:8px;background:var(--navy2);border-radius:4px;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--blue),var(--sky));transition:width .35s}
+.layout{max-width:1060px;margin:0 auto;padding:0 16px;display:block}
+nav{position:sticky;top:50px;z-index:15;display:flex;gap:8px;overflow-x:auto;padding:10px 0;margin:0 -16px;padding-inline:16px;background:rgba(6,6,12,.82);backdrop-filter:blur(8px);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:none;display:flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;color:var(--mut);text-decoration:none;font-size:14px;white-space:nowrap;transition:.2s}
+nav a b{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--navy2);color:var(--lilac);font-size:12px}
+nav a .nm{display:none}
+nav a .ct{font-style:normal;font-size:12px;opacity:.8}
+nav a.on{border-color:var(--purple);color:var(--ink);background:linear-gradient(135deg,#2a1666aa,#143b9baa)}
+nav a.done b{background:var(--blue);color:#fff}
+nav a.done b::after{content:"✓";position:absolute;font-size:12px;color:#fff;background:var(--blue);width:22px;height:22px;display:grid;place-items:center;border-radius:50%;margin:0}
+nav a b{position:relative}
+nav a.hide,.q.hide,h2.hide{display:none}
+main{padding:12px 0 90px}
+.intro{background:linear-gradient(135deg,#14214f,#1a1140);border:1px solid var(--line);border-radius:14px;padding:16px 18px;color:var(--mut);margin:0 0 16px}
+.consent{background:var(--card);border:1px solid var(--purple);border-radius:14px;padding:6px 8px;margin-bottom:10px;box-shadow:0 0 0 3px #8a4fe81f}
+h2{font:700 1.2rem/1.3 Georgia,serif;margin:38px 0 14px;padding-top:2px;color:var(--ink)}
+h2::after{content:"";display:block;height:12px;margin-top:8px;background:var(--zig) repeat-x;opacity:.85}
+.q{background:linear-gradient(180deg,var(--card),#0b1128);border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:14px;padding:16px;margin:14px 0;transition:border-color .2s,box-shadow .2s}
+.q:focus-within{border-left-color:var(--sky);box-shadow:0 8px 30px #0006}
+.q.err{border-color:var(--err);border-left-color:var(--err)}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+.q legend{font-weight:600;padding:0;margin-bottom:4px;display:block;float:left;width:100%}
+.q legend+*{clear:both}
+.hint{font-size:13px;color:var(--mut);margin:0 0 10px}
+.opts{display:grid;gap:8px}
+.opts.grid{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.opt{position:relative;display:flex;align-items:center;gap:12px;min-height:48px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:#0a1030;cursor:pointer;transition:transform .15s,border-color .15s,background .15s}
+.consent .opt{border:0;background:none}
+.opt:hover{border-color:var(--blue);background:#101a46}
+.opt:active{transform:scale(.985)}
+.opt input:not(.oth){appearance:none;-webkit-appearance:none;flex:none;width:20px;height:20px;margin:0;border:2px solid var(--mut);background:transparent;display:grid;place-items:center;cursor:pointer;transition:.15s}
+.opt input[type=radio]{border-radius:50%}
+.opt input[type=checkbox]{border-radius:6px}
+.opt input:not(.oth):checked{border-color:var(--sky);background:linear-gradient(135deg,var(--purple),var(--blue))}
+.opt input:not(.oth):checked::after{content:"";width:7px;height:7px;border-radius:50%;background:#fff;animation:pop .2s}
+.opt input[type=checkbox]:checked::after{border-radius:2px}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.opt:has(input:checked){border-color:var(--purple);background:linear-gradient(135deg,#2b1769,#123a96);box-shadow:0 4px 18px #8a4fe833}
+.opt:has(input:focus-visible),input[type=text]:focus-visible,textarea:focus-visible,button:focus-visible,nav a:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.opt .oth{flex:1;min-width:0}
+input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:#060a1c;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+input[type=text]:disabled{opacity:.45}
+textarea{min-height:120px;resize:vertical}
+.msg{color:var(--err);font-size:14px;margin-top:8px;display:none}
+.q.err .msg{display:block}
+.note{background:#241a58;border-radius:10px;padding:10px 12px;font-size:14px;margin-top:10px;display:none}
+button{display:block;width:100%;font:inherit;font-weight:700;letter-spacing:.3px;color:#fff;background:linear-gradient(135deg,var(--purple),var(--blue));border:0;border-radius:14px;padding:16px 28px;cursor:pointer;margin-top:30px;box-shadow:0 10px 30px #3d7bff44;transition:transform .15s,box-shadow .15s}
+button:hover{transform:translateY(-2px);box-shadow:0 14px 36px #8a4fe866}
+button:disabled{opacity:.6;cursor:wait;transform:none}
+.status{margin-top:14px;font-size:15px;color:var(--lilac)}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.done{text-align:center;padding:70px 16px;background:var(--tri) repeat-x bottom;min-height:60vh}
+.done h1{font-family:Georgia,serif}
+footer{height:24px;background:var(--tri) repeat-x;opacity:.9}
+@media (min-width:700px){
+ .hero{padding-top:48px}
+ .q{padding:20px 22px}
+ button{width:auto;display:inline-block}
+ nav a .nm{display:inline}
+ nav a b{width:24px;height:24px}
+}
+@media (min-width:1024px){
+ html{scroll-padding-top:80px}
+ .layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:32px}
+ nav{top:78px;align-self:start;flex-direction:column;overflow:visible;margin:24px 0 0;padding:0;background:none;backdrop-filter:none;gap:6px}
+ nav a{border-radius:12px;padding:10px 12px;border-color:transparent;font-size:15px;white-space:normal}
+ nav a .ct{margin-left:auto}
+ nav a:hover{background:#101a46;color:var(--ink)}
+ nav a.on{border-color:var(--purple)}
+ main{padding-top:24px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="in"><div><h1>Survei Singkat: Teknologi &amp; AI di Jayapura/Papua</h1><p>29 pertanyaan, sekitar 7–10 menit. Tanpa nama, tanpa jawaban benar atau salah.</p></div><div class="emb"><svg viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke-width="3" stroke-linejoin="round"><path d="M60 6 L114 60 L60 114 L6 60Z" stroke="#b58cff"/><path d="M60 22 L98 60 L60 98 L22 60Z" stroke="#6fb4ff"/><path d="M60 38 L82 60 L60 82 L38 60Z" stroke="#b58cff"/><path d="M60 0 L66 10 L54 10Z M120 60 L110 66 L110 54Z M60 120 L54 110 L66 110Z M0 60 L10 54 L10 66Z" fill="#3d7bff" stroke="none"/></g><circle cx="60" cy="60" r="6" fill="#6fb4ff"/></svg></div></div><div class="band"></div></header>
+<div class="bar"><div><span id="pct">0%</span><span class="track"><span class="fill" id="fill" style="display:block"></span></span></div></div>
+<div class="layout">
+<nav id="nav" aria-label="Bagian survei"></nav>
+<main>
+<form id="f" novalidate>
+<p class="intro">Survei ini ingin mengetahui bagaimana warga Jayapura dan Papua menggunakan teknologi dan kecerdasan buatan (AI), misalnya ChatGPT, Gemini, atau Meta AI di WhatsApp. Anda tidak perlu mencantumkan nama, dan semua jawaban dijaga kerahasiaannya serta hanya dipakai untuk keperluan kajian.</p>
+<div class="consent"><label class="opt"><input type="checkbox" id="consent"><span>Saya bersedia mengisi survei ini secara sukarela.</span></label><div class="msg" id="consentMsg" style="padding:0 12px 10px">Centang kotak ini untuk melanjutkan.</div></div>
+<div id="qs"></div>
+<div class="hp" aria-hidden="true"><label>Jangan diisi <input type="text" id="hp" tabindex="-1" autocomplete="off"></label></div>
+<button type="submit" id="send">Kirim jawaban</button>
+<div class="status" id="status" role="status"></div>
+</form>
+<div class="done" id="done" hidden><h1>Terima kasih!</h1><p>Jawaban Anda sudah terkirim.</p></div>
+</main>
+</div>
+<footer></footer>
+<script>
+// === PENGATURAN: tempel URL aplikasi web dari Google Apps Script di sini ===
+const ENDPOINT = "https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnQl9dfl5qA5GPyEsPbHrUeY3ZVlvZWD-b1l4_rE7JWlnsd09OQbhbN1UJkyKaQLkJxpymjah9fE8B9L4ZXyEXi5zjbOjIrCBqFX31BdO90t8_8uI5OWdqGAfeUBzEfSmAWYgTfTGpC4ZebnuZNUM6NpVg086qjszYt0iGwmtN6nzwlRRM7PGJBQ-RHRgCCXncaWNVGSWFbHcC_NmRZQBL39qfjpEQ5kUab7mhsQPQNvd7bHo7jI1PqR7AwoqrZ4I26sBBQr_l4utMUbJfX8wf4RXTMCGg&lib=M8Sbk3JlAUZjecj28sJ8UGusnc29y6Vq7";
+
+const S = {A:"A. Profil responden",B:"B. Penggunaan AI",C:"C. Keterampilan dan cara belajar",D:"D. AI di tempat kerja dan usaha",E:"E. Tantangan dan kekhawatiran",F:"F. Konteks Papua",G:"G. Harapan dan kebijakan"};
+const L4=["Sangat tidak setuju","Tidak setuju","Setuju","Sangat setuju"];
+const L5=["Sangat buruk","Buruk","Cukup","Baik","Sangat baik"];
+const O="Lainnya";
+// t: s=pilih satu, m=boleh lebih dari satu, x=isian bebas. o: pilihan; "*" di depan = ada kolom isian. 
+const Q=[
+{n:1,s:"A",k:"Usia",q:"Berapa usia Anda?",t:"s",o:["Di bawah 18 tahun","18–28 tahun (Gen Z)","29–44 tahun (Milenial)","45 tahun ke atas"]},
+{n:2,s:"A",k:"Jenis kelamin",q:"Apa jenis kelamin Anda?",t:"s",o:["Laki-laki","Perempuan"]},
+{n:3,s:"A",k:"Tempat tinggal",q:"Di mana Anda tinggal saat ini?",t:"s",o:["Kota Jayapura","Kabupaten Jayapura (Sentani dan sekitarnya)","Kabupaten Keerom","*Kabupaten lain di Papua"]},
+{n:4,s:"A",k:"Pekerjaan",q:"Apa pekerjaan atau status Anda saat ini?",t:"s",o:["Pelajar atau mahasiswa","ASN, TNI, atau Polri","Karyawan swasta atau BUMN","Wirausaha atau pelaku UMKM","Guru atau dosen","Tenaga kesehatan","Pekerja gereja, LSM, atau lembaga adat","Belum atau tidak bekerja","*"+O]},
+{n:5,s:"A",k:"Sektor",q:"Jika bekerja atau berusaha, di sektor apa?",t:"s",opt:1,o:["Digital, media, atau kreatif","Pendidikan","Perdagangan dan jasa konsumen","Pemerintahan","Kesehatan","Pertanian, perikanan, atau kehutanan","*"+O]},
+{n:6,s:"B",k:"Peran AI",q:"Seberapa besar peran AI dalam kehidupan sehari-hari Anda?",t:"s",o:["Tidak berperan sama sekali","Sedikit berperan","Cukup berperan","Sangat berperan"]},
+{n:7,s:"B",k:"Bergantung pada AI",q:"Seberapa setuju Anda dengan pernyataan “Saya bergantung pada AI untuk aktivitas sehari-hari”?",t:"s",o:L4},
+{n:8,s:"B",k:"Aplikasi AI",q:"Aplikasi AI apa saja yang Anda gunakan dalam 6 bulan terakhir?",t:"m",none:"Belum pernah menggunakan AI",o:["ChatGPT","Meta AI (di WhatsApp, Instagram, atau Facebook)","Google Gemini","Microsoft Copilot","DeepSeek","Perplexity","*"+O,"Belum pernah menggunakan AI"]},
+{n:9,s:"B",k:"Frekuensi chatbot",q:"Seberapa sering Anda memakai chatbot AI?",t:"s",skip:1,o:["Kurang dari sekali seminggu","1–3 kali seminggu","Lebih dari 3 kali seminggu","Setiap hari"]},
+{n:10,s:"B",k:"Keperluan AI",q:"Untuk keperluan apa Anda memakai AI?",t:"m",skip:1,o:["Mencari informasi atau merangkum jawaban","Tugas sekolah atau kuliah","Pekerjaan kantor (surat, laporan, presentasi)","Membuat konten media sosial","Jualan atau promosi usaha","Menerjemahkan bahasa","Menyiapkan bahan ibadah, khotbah, atau kegiatan gereja","Hiburan","*"+O]},
+{n:11,s:"B",k:"Dampak AI",q:"Secara umum, bagaimana dampak AI bagi hidup Anda?",t:"s",skip:1,o:["Lebih banyak negatif","Seimbang","Lebih banyak positif"]},
+{n:12,s:"C",k:"Kemampuan AI",q:"Bagaimana Anda menilai kemampuan Anda menggunakan AI?",t:"s",skip:1,o:["Pemula","Menengah","Mahir","Ahli"]},
+{n:13,s:"C",k:"Sumber belajar",q:"Dari mana Anda belajar menggunakan AI?",t:"m",skip:1,o:["Media sosial atau YouTube","Teman atau keluarga","Sekolah atau kampus","Kursus formal atau pelatihan","Mencoba sendiri"]},
+{n:14,s:"C",k:"Cek kebenaran AI",q:"Apakah Anda memeriksa kebenaran jawaban AI, misalnya dengan buku, jurnal, atau sumber lain?",t:"s",skip:1,o:["Selalu","Kadang-kadang","Jarang","Tidak pernah"]},
+{n:15,s:"D",k:"AI untuk kerja",q:"Apakah Anda memakai AI untuk pekerjaan atau usaha Anda?",t:"s",skip:1,o:["Ya, rutin","Ya, sesekali","Tidak","Tidak bekerja atau berusaha"]},
+{n:16,s:"D",k:"Sikap organisasi",q:"Bagaimana sikap kantor atau organisasi Anda terhadap penggunaan AI?",t:"s",skip:1,o:["Melarang","Netral (tidak ada aturan)","Mendorong","Mewajibkan","Tidak tahu","Tidak bekerja atau berusaha"]},
+{n:17,s:"D",k:"Pekerjaan tergantikan",q:"Seberapa setuju Anda dengan pernyataan “Pekerjaan saya bisa sepenuhnya digantikan AI dalam 5 tahun ke depan”?",t:"s",skip:1,o:L4.concat("Tidak bekerja atau berusaha")},
+{n:18,s:"D",k:"AI untuk UMKM",q:"Khusus pelaku usaha atau UMKM: di bagian apa AI paling membantu usaha Anda?",t:"m",skip:1,opt:1,o:["Promosi dan konten media sosial","Melayani pelanggan","Pembukuan atau perhitungan","Mencari ide produk","Belum memakai AI untuk usaha"]},
+{n:19,s:"E",k:"Hambatan",q:"Apa hambatan terbesar Anda dalam memakai AI?",t:"m",o:["Keamanan data pribadi","Jawaban AI tidak akurat","Biaya atau akses","Bahasa atau tampilan aplikasi sulit dipahami","Sulit memakai fitur lanjutan","Internet lambat atau tidak stabil","Perangkat (HP atau laptop) kurang memadai"]},
+{n:20,s:"E",k:"Kekhawatiran",q:"Apa yang paling Anda khawatirkan dari AI?",t:"m",o:["Foto, suara, atau video palsu (deepfake)","Penyalahgunaan data pribadi","Informasi yang salah atau hoaks","Kehilangan pekerjaan","*"+O]},
+{n:21,s:"E",k:"Info AI aman",q:"Seberapa setuju Anda dengan pernyataan “Informasi dari AI aman dipakai untuk keperluan sehari-hari”?",t:"s",o:L4},
+{n:22,s:"F",k:"Kualitas internet",q:"Bagaimana kualitas internet yang Anda pakai sehari-hari?",t:"s",o:L5},
+{n:23,s:"F",k:"Biaya kuota",q:"Berapa pengeluaran Anda untuk kuota atau internet per bulan?",t:"s",o:["Kurang dari Rp50.000","Rp50.000–Rp100.000","Rp100.001–Rp200.000","Lebih dari Rp200.000"]},
+{n:24,s:"F",k:"AI paham Papua",q:"Menurut Anda, seberapa baik AI memahami konteks Papua, seperti nama tempat, istilah lokal, logat Melayu Papua, atau bahasa daerah?",t:"s",o:L5},
+{n:25,s:"F",k:"Budaya luar",q:"Seberapa setuju Anda dengan pernyataan “Media sosial dan AI membuat saya lebih banyak mengonsumsi budaya luar daripada budaya Papua”?",t:"s",o:L4},
+{n:26,s:"F",k:"Melihat konten palsu",q:"Dalam setahun terakhir, apakah Anda pernah melihat foto, suara, atau video palsu buatan AI beredar di grup WhatsApp atau media sosial lokal?",t:"s",o:["Ya","Tidak","Tidak yakin"]},
+{n:27,s:"G",k:"Papua siap ekonomi",q:"Seberapa setuju Anda dengan pernyataan “Papua siap secara ekonomi memanfaatkan AI”?",t:"s",o:L4},
+{n:28,s:"G",k:"Prioritas pemerintah",q:"Apa yang paling perlu dilakukan pemerintah di Papua terkait AI?",t:"m",max:3,o:["Pelatihan AI dan keterampilan digital untuk pekerja","Literasi digital untuk masyarakat","Aturan yang melindungi pekerja","Pemerataan internet dan infrastruktur","Pengembangan AI dan konten berbahasa daerah Papua","Perlindungan data pribadi dan pencegahan deepfake"]},
+{n:29,s:"G",k:"Pengalaman",q:"Ceritakan singkat pengalaman Anda, baik yang membantu maupun yang merugikan, saat menggunakan AI di Papua.",t:"x",opt:1}
+];
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const root=$("#qs"); let cur="";
+Q.forEach(d=>{
+  if(d.s!==cur){cur=d.s;const h=document.createElement("h2");h.textContent=S[cur];h.id="sec-"+cur;root.appendChild(h);}
+  const w=document.createElement("div");w.className="q";w.id="q"+d.n;
+  const hint=d.t==="m"?(d.max?`Pilih paling banyak ${d.max}.`:"Boleh pilih lebih dari satu."):d.t==="s"?"Pilih satu.":"Opsional.";
+  let h=`<fieldset><legend>${d.n}. ${d.q}</legend><p class="hint">${hint}${d.opt&&d.t!=="x"?" Opsional.":""}</p>`;
+  if(d.t==="x"){h+=`<textarea name="q${d.n}" aria-label="Pengalaman Anda"></textarea>`;}
+  else{h+=`<div class="opts${d.o.every(o=>o.length<34)&&!d.o.some(o=>o[0]==="*")?" grid":""}">`;d.o.forEach((o,i)=>{
+    const oth=o[0]==="*",lab=oth?o.slice(1):o,ty=d.t==="m"?"checkbox":"radio";
+    h+=`<label class="opt"><input type="${ty}" name="q${d.n}" value="${lab}" data-oth="${oth?1:0}"><span>${lab}</span>${oth?`<input type="text" class="oth" maxlength="120" placeholder="Tulis di sini" aria-label="${lab}">`:""}</label>`;
+  });h+="</div>";}
+  h+=`</fieldset><div class="msg">Pertanyaan ini perlu dijawab.</div>`;
+  if(d.n===1)h+=`<div class="note" id="n1">Responden di bawah 18 tahun memerlukan izin orang tua atau sekolah, atau jawabannya dikeluarkan dari analisis.</div>`;
+  w.innerHTML=h;root.appendChild(w);
+});
+
+const nav=$("#nav");
+Object.keys(S).forEach(k=>{const a=document.createElement("a");a.href="#sec-"+k;a.dataset.s=k;
+  a.innerHTML=`<b>${k}</b><span class="nm">${S[k].slice(3)}</span><i class="ct"></i>`;nav.appendChild(a);
+  a.addEventListener("click",ev=>{ev.preventDefault();document.getElementById("sec-"+k).scrollIntoView({behavior:"smooth",block:"start"});});});
+const spy=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;
+  const k=en.target.id.slice(4);nav.querySelectorAll("a").forEach(a=>a.classList.toggle("on",a.dataset.s===k));
+  const on=nav.querySelector("a.on");if(on&&nav.scrollWidth>nav.clientWidth)nav.scrollTo({left:on.offsetLeft-nav.clientWidth/2+on.clientWidth/2,behavior:"smooth"});}),{rootMargin:"-25% 0px -65% 0px"});
+$$("h2[id^=sec-]").forEach(h=>spy.observe(h));
+const inputs=n=>$$(`#q${n} input[name=q${n}]`);
+function skipped(d){return d.skip&&$("#q8").dataset.none==="1";}
+function show(){Q.filter(d=>d.skip).forEach(d=>$("#q"+d.n).classList.toggle("hide",skipped(d)));progress();}
+function val(d){
+  if(skipped(d))return "";
+  if(d.t==="x")return $(`#q${d.n} textarea`).value.trim();
+  const picks=inputs(d.n).filter(i=>i.checked).map(i=>{
+    if(i.dataset.oth==="1"){const t=i.parentElement.querySelector(".oth").value.trim();return t?`${i.value}: ${t}`:i.value;}
+    return i.value;});
+  return d.t==="m"?picks.join(" | "):(picks[0]||"");
+}
+function answered(d){
+  if(d.t==="x")return true;
+  const ch=inputs(d.n).filter(i=>i.checked);
+  if(!ch.length)return false;
+  return ch.every(i=>i.dataset.oth!=="1"||i.parentElement.querySelector(".oth").value.trim());
+}
+function progress(){
+  const req=Q.filter(d=>!d.opt&&!skipped(d));
+  const ok=req.filter(answered).length;
+  const p=Math.round(100*ok/req.length);
+  $("#fill").style.width=p+"%";$("#pct").textContent=p+"%";
+  Object.keys(S).forEach(k=>{
+    const all=Q.filter(d=>d.s===k&&!skipped(d)),r=all.filter(d=>!d.opt),a=nav.querySelector(`[data-s=${k}]`);
+    $("#sec-"+k).classList.toggle("hide",!all.length);a.classList.toggle("hide",!all.length);
+    const n=r.filter(answered).length;a.querySelector(".ct").textContent=r.length?`${n}/${r.length}`:"";
+    a.classList.toggle("done",r.length>0&&n===r.length);});
+}
+root.addEventListener("change",e=>{
+  const t=e.target,q=t.closest(".q");if(!q)return;
+  const n=+q.id.slice(1),d=Q[n-1];
+  if(t.classList.contains("oth"))return;
+  if(t.dataset.oth==="1"||true){const o=t.parentElement.querySelector(".oth");
+    if(o&&t.type==="radio"){inputs(n).forEach(i=>{const x=i.parentElement.querySelector(".oth");if(x)x.disabled=!i.checked;});}
+    else if(o){o.disabled=!t.checked;}
+    if(o&&t.checked)o.focus();}
+  if(d.max&&inputs(n).filter(i=>i.checked).length>d.max){t.checked=false;
+    q.querySelector(".msg").textContent=`Pilih paling banyak ${d.max}.`;q.classList.add("err");return;}
+  if(d.none){const nn=t.value===d.none;
+    if(t.checked){inputs(n).forEach(i=>{if(nn?i!==t:i.value===d.none)i.checked=false;});}
+    q.dataset.none=inputs(n).some(i=>i.checked&&i.value===d.none)?"1":"0";show();}
+  if(n===1)$("#n1").style.display=t.value==="Di bawah 18 tahun"?"block":"none";
+  q.classList.remove("err");progress();
+});
+root.addEventListener("input",e=>{if(e.target.classList.contains("oth")){e.target.closest(".q").classList.remove("err");progress();}});
+$$(".oth").forEach(o=>o.disabled=true);
+$("#consent").addEventListener("change",()=>$("#consentMsg").style.display="none");
+
+$("#f").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const st=$("#status");st.textContent="";
+  let bad=null;
+  if(!$("#consent").checked){$("#consentMsg").style.display="block";bad=$(".consent");}
+  Q.forEach(d=>{const q=$("#q"+d.n);q.classList.remove("err");
+    if(!d.opt&&!skipped(d)&&!answered(d)){q.querySelector(".msg").textContent="Pertanyaan ini perlu dijawab.";q.classList.add("err");bad=bad||q;}});
+  if(bad){bad.scrollIntoView({behavior:"smooth",block:"center"});st.textContent="Masih ada pertanyaan yang belum dijawab.";return;}
+  if(ENDPOINT.startsWith("PASTE_")){st.textContent="Formulir belum tersambung ke Google Sheets. Isi ENDPOINT di bagian script (lihat PETUNJUK.md).";return;}
+  const data={_hp:$("#hp").value};
+  Q.forEach(d=>data[`Q${String(d.n).padStart(2,"0")} ${d.k}`]=val(d));
+  const btn=$("#send");btn.disabled=true;st.textContent="Mengirim…";
+  try{
+    await fetch(ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});
+    $("#f").hidden=true;$("#done").hidden=false;window.scrollTo(0,0);
+  }catch(err){btn.disabled=false;st.textContent="Pengiriman gagal. Periksa koneksi internet lalu coba lagi.";}
+});
+progress();
+</script>
+</body>
+</html>
